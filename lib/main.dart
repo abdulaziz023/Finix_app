@@ -1,29 +1,28 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
-import 'model/model.dart';
-
-Future<void> main() async {
-  Uri uri = Uri.parse("https://dummyjson.com/users/7");
-  Response response = await get(uri);
-  User user = User.fromMap(jsonDecode(response.body));
-
+void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Finix app",
+      title: "Widget G8",
       home: Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          title: Text("${user.firstName} ${user.hair!.color}"),
-          backgroundColor: Colors.deepPurple,
-        ),
-        body: Center(
-          child: Image(
-            image: NetworkImage("${user.image}"),
-          ),
+        body: Row(
+          children: [
+            Expanded(
+              child: Container(
+                child: Text('2'),
+                height: 100,
+                color: Colors.blue,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Text('3'),
+                height: 100,
+                color: Colors.green,
+              ),
+            ),
+          ],
         ),
       ),
     ),
